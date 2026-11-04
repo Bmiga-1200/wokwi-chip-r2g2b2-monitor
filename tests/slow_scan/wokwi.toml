@@ -1,0 +1,11 @@
+[wokwi]
+version = 1
+firmware = "./build/arduino.avr.mega/slow_scan.ino.hex" # this is a decoy!
+elf = "./build/arduino.avr.mega/slow_scan.ino.elf"
+rfc2217ServerPort = 4000
+gdbServerPort=3333
+
+[[chip]]
+name = 'dvia-monitor'  # To use the chip in diagram.json, add a part with "dvia-monitor" type.
+binary = '../../dist/dvia-monitor.chip.wasm'
+

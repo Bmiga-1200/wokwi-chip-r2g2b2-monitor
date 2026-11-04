@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "author": "B1200",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp32",
+      "top": -250,
+      "left": 100,
+      "attrs": {
+        "firmwareOffset": "0",
+        "flashSize": "16",
+        "psramType": "octal",
+        "psramSize": "16"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -300,
+      "left": 50,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -300,
+      "left": -10,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic1",
+      "top": 67.55,
+      "left": 384,
+      "attrs": {}
+    },
+    {
+      "type": "chip-dvia-monitor",
+      "id": "dvia",
+      "top": 183.42,
+      "left": 398.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": 62.5,
+      "left": 420,
+      "attrs": { "text": "VSYNC" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": 75.5,
+      "left": 420,
+      "attrs": { "text": "HSYNC" }
+    }
+  ],
+  "connections": [
+    [ "esp32:4", "led1:A", "red", [] ],
+    [ "esp32:GND.1", "led1:C", "black", [] ],
+    [ "esp32:5", "led2:A", "green", [] ],
+    [ "esp32:GND.1", "led2:C", "black", [] ],
+    [ "esp32:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp32:RX", "$serialMonitor:TX", "", [] ],
+    [ "logic1:D7", "esp32:11", "red", [ "h-300.2", "v-124.8" ] ],
+    [ "logic1:D6", "esp32:10", "#7d0000", [ "h-350.2", "v-124.8" ] ],
+    [ "logic1:GND", "esp32:GND.4", "black", [ "v0", "h-50.2" ] ],
+    [ "esp32:48", "logic1:D0", "#8f4814", [ "v0", "h85", "v-6.8" ] ],
+    [ "esp32:47", "logic1:D1", "orange", [ "v0", "h76", "v-6.8" ] ],
+    [ "esp32:46", "logic1:D2", "#0000ff", [ "v0", "h-105.2", "v-76.8" ] ],
+    [ "esp32:39", "logic1:D3", "#00007d", [ "h101", "v-124.8" ] ],
+    [ "dvia:HSYNC", "logic1:D1", "orange", [ "v0", "h-135.2", "v-76.8" ] ],
+    [ "logic1:D0", "dvia:VSYNC", "#8f4814", [ "v0", "h-133.2", "v172.8" ] ],
+    [ "dvia:B1", "logic1:D2", "#0000ff", [ "v0", "h-105.2", "v-76.8" ] ],
+    [ "dvia:B0", "logic1:D3", "#00007d", [ "h-110.2", "v-124.8" ] ],
+    [ "logic1:D5", "esp32:40", "#007d00", [ "v0", "h-37.2", "v-90" ] ],
+    [ "logic1:D4", "esp32:45", "#00FF00", [ "h-50.2", "v-124.8" ] ],
+    [ "logic1:D7", "dvia:R0", "red", [ "h-110.2", "v-124.8" ] ],
+    [ "logic1:D6", "dvia:R1", "#7d0000", [ "h-100.2", "v-124.8" ] ],
+    [ "logic1:D5", "dvia:G0", "#007d00", [ "v0", "h-37.2", "v-90" ] ],
+    [ "logic1:D4", "dvia:G1", "#00FF00", [ "h-50.2", "v-124.8" ] ]
+  ],
+  "serialMonitor": {
+    "display": "terminal",
+    "convertEol": true
+  },
+  "dependencies": {
+    "chip-scope": "github:Dlloydev/Wokwi-Chip-scope@1.0.7"
+  }
+}

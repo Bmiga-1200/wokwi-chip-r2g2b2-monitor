@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "B1200 Team",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-pi-pico", "id": "pico", "top": 35.25, "left": 22.8, "attrs": {} },
+    { "type": "wokwi-logic-analyzer", "id": "logic1", "top": -114.85, "left": 172.8, "attrs": {} },
+    { "type": "chip-dvia-monitor", "id": "dvia", "top": 183.42, "left": 398.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GND.8", "logic1:GND", "black", [ "h0" ] ],
+    [ "pico:GP0", "logic1:D7", "blue", [ "h-28.8", "v-9.6" ] ],
+    [ "pico:GP1", "logic1:D6", "blue", [ "h-38.4", "v-105.6" ] ],
+    [ "pico:GP3", "logic1:D5", "green", [ "h-48", "v-144" ] ],
+    [ "pico:GP4", "logic1:D4", "green", [ "h-57.6", "v-163.2" ] ],
+    [ "pico:GP6", "logic1:D3", "red", [ "h-67.2", "v-201.6" ] ],
+    [ "pico:GP7", "logic1:D2", "red", [ "h-76.8", "v-19.2" ] ],
+    [ "pico:GP8", "logic1:D1", "#8f4814", [ "h-86.4", "v-240" ] ]
+  ],
+  "dependencies": {}
+}

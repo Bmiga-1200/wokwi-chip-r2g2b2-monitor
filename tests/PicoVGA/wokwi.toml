@@ -1,0 +1,11 @@
+[wokwi]
+version = 1
+firmware = "./vga_hello.hex"
+elf = "./vga_hello.elf"
+rfc2217ServerPort = 4000
+gdbServerPort=3333
+
+[[chip]]
+name = 'dvia-monitor'  # To use the chip in diagram.json, add a part with "dvia-monitor" type.
+binary = '../../dist/dvia-monitor.chip.wasm'
+

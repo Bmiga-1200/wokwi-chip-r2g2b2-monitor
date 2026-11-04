@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "author": "B1200",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "top": 27.2,
+      "left": -137,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic1",
+      "top": 67.55,
+      "left": 384,
+      "attrs": {}
+    },
+    {
+      "type": "chip-dvia-monitor",
+      "id": "dvia",
+      "top": 183.42,
+      "left": 398.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": 62.5,
+      "left": 420,
+      "attrs": {
+        "text": "VSYNC"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": 75.5,
+      "left": 420,
+      "attrs": {
+        "text": "HSYNC"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "mega:GND.1",
+      "logic1:GND",
+      "black",
+      [
+        "h163.2",
+        "v86.2"
+      ]
+    ],
+    [
+      "mega:11",
+      "logic1:D0",
+      "#8f4814",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "dvia:HSYNC",
+      "logic1:D1",
+      "orange",
+      [
+        "v0",
+        "h-135.2",
+        "v-76.8"
+      ]
+    ],
+    [
+      "dvia:B1",
+      "logic1:D2",
+      "#0000ff",
+      [
+        "v0",
+        "h-105.2",
+        "v-76.8"
+      ]
+    ],
+    [
+      "dvia:B0",
+      "logic1:D3",
+      "#00007d",
+      [
+        "h-110.2",
+        "v-124.8"
+      ]
+    ],
+    [
+      "mega:2",
+      "dvia:R1",
+      "#7d0000",
+      [
+        "v0",
+        "h10.2",
+        "v-124.8"
+      ]
+    ],
+    [
+      "mega:3",
+      "dvia:R0",
+      "red",
+      [
+        "v0",
+        "h20.2",
+        "v-124.8"
+      ]
+    ],
+    [
+      "logic1:D7",
+      "dvia:R0",
+      "red",
+      [
+        "h-110.2",
+        "v-124.8"
+      ]
+    ],
+    [
+      "logic1:D6",
+      "dvia:R1",
+      "#7d0000",
+      [
+        "h-100.2",
+        "v-124.8"
+      ]
+    ],
+    [
+      "mega:16",
+      "dvia:G1",
+      "#00FF00",
+      [
+        "v0",
+        "h70.2",
+        "v-96"
+      ]
+    ],
+    [
+      "mega:15",
+      "dvia:G0",
+      "#007d00",
+      [
+        "v0",
+        "h70.2",
+        "v-90"
+      ]
+    ],
+    [
+      "logic1:D5",
+      "dvia:G0",
+      "#007d00",
+      [
+        "v0",
+        "h-37.2",
+        "v-90"
+      ]
+    ],
+    [
+      "logic1:D4",
+      "dvia:G1",
+      "#00FF00",
+      [
+        "h-50.2",
+        "v-124.8"
+      ]
+    ],
+    [
+      "mega:18",
+      "dvia:B1",
+      "#0000FF",
+      [
+        "v0",
+        "h85.2",
+        "v86.4"
+      ]
+    ],
+    [
+      "mega:17",
+      "dvia:B0",
+      "#00007d",
+      [
+        "v0",
+        "h75.2",
+        "v86.4"
+      ]
+    ],
+    [
+      "mega:9",
+      "logic1:D1",
+      "orange",
+      [
+        "v0",
+        "h27.6",
+        "v163.2"
+      ]
+    ],
+    [
+      "mega:21",
+      "dvia:DDCCL",
+      "purple",
+      [
+        "v0",
+        "h40.6",
+        "v163.2"
+      ]
+    ],
+    [
+      "mega:20",
+      "dvia:DDCIO",
+      "purple",
+      [
+        "v0",
+        "h27.6",
+        "v163.2"
+      ]
+    ],
+    [
+      "logic1:D0",
+      "dvia:VSYNC",
+      "#8f4814",
+      [
+        "v0",
+        "h-133.2",
+        "v172.8"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
