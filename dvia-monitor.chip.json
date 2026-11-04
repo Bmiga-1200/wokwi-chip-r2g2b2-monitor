@@ -1,0 +1,26 @@
+{
+    "name": "DVI-A Monitor (R2G2B2)",
+    "author": "B1200 Team",
+    "pins": [
+        "R0",
+        "R1",
+        "G0",
+        "G1",
+        "B0",
+        "B1",
+        "HSYNC",
+        "VSYNC",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "display": {
+        "width": 640,
+        "height": 480
+    }
+}
